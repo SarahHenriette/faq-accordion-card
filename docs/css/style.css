@@ -70,14 +70,32 @@ main {
     width: 350px;
     height: 285px;
 }
+
 #questions .contain-question {
     width: 100%;
     height: 35px;
     border-bottom: 1px solid #E8E8EA;
     margin-bottom: 16px;
+    cursor: pointer;
+    transition: height .5s linear;
+    overflow: hidden;
 }
+
 #questions .contain-question.active {
     height: 81px;
+}
+
+#questions .contain-question.active .question {
+    margin-bottom: 11px;
+    font-weight: bold;
+}
+
+#questions .contain-question.active .response {
+    display: block;
+}
+#questions .contain-question.active .icon-arrow {
+    transform: rotate(180deg);
+    pointer-events: none
 }
 
 #questions .contain-question .question {
@@ -86,13 +104,8 @@ main {
     font-weight: 400;
     display: flex;
     justify-content: space-between;
+    pointer-events: none
 }
-
-#questions .contain-question .question.active {
-    margin-bottom: 11px;
-    font-weight: bold;
-} 
-
 
 #questions .contain-question .response {
     font-family: 'Kumbh Sans', sans-serif;
@@ -101,17 +114,14 @@ main {
     width: 319px;
     height: auto;
     display: none;
+    pointer-events: none
 }
 
-#questions .contain-question .response.active {
-    display: block;
-}
 #questions .contain-question .icon-arrow {
     margin-right: 16px;
+    transition: transform .5s linear;
 }
-#questions .contain-question .icon-arrow.active {
-    transform: rotate(180deg);
-}
+
 p {
     margin: 0;
 }
